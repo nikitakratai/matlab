@@ -1,0 +1,8 @@
+ wz=2*pi/86400;
+ for ie=1:length(XYZkas)
+     th=-wz*ranges2(ie)/299792.458;
+     mp=[cos(th) sin(th) 0; -sin(th) cos(th) 0; 0 0 1];% rotation matrix
+     v1=XYZkas(ie,:)';
+     v2=mp*v1;
+     XYZkas(ie,:)=v2';
+ end;
